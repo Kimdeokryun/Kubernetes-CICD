@@ -106,3 +106,18 @@ PING 192.168.1.103 (192.168.1.103) 56(84) bytes of data.
 3 packets transmitted, 3 received, 0% packet loss, time 2009ms
 rtt min/avg/max/mdev = 0.704/1.307/1.700/0.435 ms
 ```
+
+## 터미널 프로그램으로 가상 머신 접속하기
+
+### PuTTY
+
+푸티를 단독으로 사용하면 창을 여러 개 띄워야 해서 명령을 내리기가 매우 번거롭습니다.
+슈퍼푸티(SuperPuTTY)를 사용하면 푸티의 이런 제약 사항이 해결됩니다.
+
+### Super PuTTY
+
+https://github.com/jimradford/superputty/releases
+
+SuperPuttySetup-1.5.0.0.msi
+
+![Alt text](./images/superputty.png)
