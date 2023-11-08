@@ -45,7 +45,7 @@ Prometheus & Grafana
 
 ## Vagrant로 VirtualBox 접속하기
 
-Vagrant 설치 파일 디렉토리로 이동. (C:\Program Files (x86)\Vagrant)
+Vagrant 설치 파일 디렉토리로 이동. ( C:\Program Files (x86)\Vagrant )
 
 command: vagrant ssh
 초기 password: vagrant
