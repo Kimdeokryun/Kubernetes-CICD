@@ -43,4 +43,66 @@ Prometheus & Grafana
 
 #
 
+## Vagrant로 VirtualBox 접속하기
 
+Vagrant 설치 파일 디렉토리로 이동. (C:\Program Files (x86)\Vagrant)
+
+command: vagrant ssh
+초기 password: vagrant
+
+### 가상 머신 추가로 구성하기
+
+베이그런트로 운영 체제를 자동으로 설치하고 구성하면 편리합니다. 하지만 단순히 운영 체제
+1개를 구성하려고 베이그런트를 사용하지는 않는다.
+
+3개의 node 가상머신 구성. (w1-k8s, w2-k8s, w3-k8s)
+1개의 root 가상머신 구성. (m-k8s)
+
+## Vagrantfile 수정
+
+책에 나온 대로 Vagrantfile을 수정.
+
+설치
+
+command: vagrant up
+
+추가 패키지를 설치를 위해 Vagrantfile을 수정.
+
+수정된 부분만 설치.
+
+command: vagrant provision
+
+
+## 가상머신 구성 완료 및 테스트
+
+### 가상머신 구성 완료 사진
+![Alt text](image-2.png)
+
+### ping test
+```
+[vagrant@m-k8s ~]$ ./ping_2_nds.sh
+PING 192.168.1.101 (192.168.1.101) 56(84) bytes of data.
+64 bytes from 192.168.1.101: icmp_seq=1 ttl=64 time=0.781 ms
+64 bytes from 192.168.1.101: icmp_seq=2 ttl=64 time=2.55 ms
+64 bytes from 192.168.1.101: icmp_seq=3 ttl=64 time=2.11 ms
+
+--- 192.168.1.101 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2235ms
+rtt min/avg/max/mdev = 0.781/1.815/2.550/0.753 ms
+PING 192.168.1.102 (192.168.1.102) 56(84) bytes of data.
+64 bytes from 192.168.1.102: icmp_seq=1 ttl=64 time=1.13 ms
+64 bytes from 192.168.1.102: icmp_seq=2 ttl=64 time=3.37 ms
+64 bytes from 192.168.1.102: icmp_seq=3 ttl=64 time=2.13 ms
+
+--- 192.168.1.102 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2007ms
+rtt min/avg/max/mdev = 1.138/2.218/3.378/0.917 ms
+PING 192.168.1.103 (192.168.1.103) 56(84) bytes of data.
+64 bytes from 192.168.1.103: icmp_seq=1 ttl=64 time=0.704 ms
+64 bytes from 192.168.1.103: icmp_seq=2 ttl=64 time=1.70 ms
+64 bytes from 192.168.1.103: icmp_seq=3 ttl=64 time=1.51 ms
+
+--- 192.168.1.103 ping statistics ---
+3 packets transmitted, 3 received, 0% packet loss, time 2009ms
+rtt min/avg/max/mdev = 0.704/1.307/1.700/0.435 ms
+```
