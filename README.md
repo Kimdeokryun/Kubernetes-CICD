@@ -4,7 +4,7 @@ Kubernetes와 Jenkins 를 사용한 CICD 학습
 
 # 
 
-![Alt text](image.png)
+![Alt text](./images/image.png)
 
 
 참고자료: 컨테이너 인프라 환경 구축을 위한 쿠버네티스/도커
@@ -76,7 +76,7 @@ command: vagrant provision
 ## 가상머신 구성 완료 및 테스트
 
 ### 가상머신 구성 완료 사진
-![Alt text](image-2.png)
+![Alt text](./images/image-2.png)
 
 ### ping test
 ```
